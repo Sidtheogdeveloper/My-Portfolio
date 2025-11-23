@@ -553,7 +553,7 @@ function App() {
                     "Smart investment recommendations and insights"
                   ],
                   tech: ["Machine Learning", "Web Development", "Financial APIs", "Data Analysis"],
-                  github: "https://github.com/username/stocktrader-pro",
+                  github: "https://github.com/Sidtheogdeveloper/StockTradersPro",
                   website: "https://stocktraderspro.netlify.app",
                   color: "orange",
                   icon: "📈"
