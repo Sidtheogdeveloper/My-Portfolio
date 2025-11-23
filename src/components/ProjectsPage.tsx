@@ -50,7 +50,7 @@ const ProjectsPage = () => {
         },
       ],
       tech: ["Machine Learning", "React", "Financial APIs", "Cloud Deployment"],
-      github: "https://github.com/username/stocktrader-pro",
+      github: "https://github.com/Sidtheogdeveloper/StockTradersPro",
       website: "https://stocktraderspro.netlify.app",
       color: "orange",
       icon: "📈",
