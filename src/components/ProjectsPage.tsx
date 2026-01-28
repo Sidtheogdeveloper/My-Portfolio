@@ -75,7 +75,7 @@ const ProjectsPage = () => {
       ],
       github: "https://github.com/Sidtheogdeveloper/project-genius",
       website: "https://projectgeniuspro.netlifyapp",
-      color: "violet",
+      color: "white",
       icon: "🧠",
       status: "Live",
       timeline: "3 months"
