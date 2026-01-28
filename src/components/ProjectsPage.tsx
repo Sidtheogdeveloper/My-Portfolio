@@ -24,6 +24,63 @@ const ProjectsPage = () => {
 
   const projects = [
     {
+      id: "projectgenius-ai",
+      title: "ProjectGenius",
+      subtitle: "AI-Powered Project Planning Platform",
+      description: "An intelligent AI-driven platform that transforms raw ideas into structured, actionable project plans with validation, roadmaps, and expert insights.",
+      longDescription: "ProjectGenius is a comprehensive AI-powered project planning and validation platform designed for developers, product managers, and entrepreneurs. It helps users convert early-stage ideas into well-structured project blueprints by providing intelligent tech stack recommendations, feature breakdowns, timeline estimates, and architectural guidance. With built-in project validation, risk assessment, smart roadmaps, and interactive AI chat, ProjectGenius empowers users to make confident, data-driven decisions throughout the project lifecycle.",
+      features: [
+        "An AI-powered project planning platform that generates structured project blueprints, validates ideas, and creates actionable development roadmaps"
+      ],
+      detailedFeatures: [
+        {
+          title: "AI Project Generation",
+          description: "Transforms raw ideas into complete project plans with tech stack suggestions, feature prioritization, timelines, and architecture guidance",
+          icon: "🎯"
+        },
+        {
+          title: "Project Validation & Scoring",
+          description: "Evaluates project feasibility with risk assessment, improvement suggestions, and market fit analysis",
+          icon: "✅"
+        },
+        {
+          title: "Interactive AI Chat",
+          description: "Context-aware conversations for iterative refinement and expert guidance on technical and business decisions",
+          icon: "💬"
+        },
+        {
+          title: "Smart Roadmap Generator",
+          description: "Week-by-week implementation plans with milestones, task prioritization, and customizable parameters",
+          icon: "🗺️"
+        },
+        {
+          title: "Project History & Sharing",
+          description: "Persistent project storage with shareable public links, analytics, and professional previews",
+          icon: "📊"
+        },
+        {
+          title: "Export & Documentation",
+          description: "Professional PDF exports, copy-to-clipboard insights, and presentation-ready formatting",
+          icon: "📄"
+        }
+      ],
+      tech: [
+        "React 18",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Supabase",
+        "PostgreSQL",
+        "AI Language Models"
+      ],
+      github: "https://github.com/Sidtheogdeveloper/project-genius",
+      website: "https://projectgenius.netlifyapp",
+      color: "violet",
+      icon: "🧠",
+      status: "Live",
+      timeline: "3 months"
+    },
+    {
       id: 'stocktrader-pro',
       title: "StockTrader Pro",
       subtitle: "AI-Powered Investment Platform",
