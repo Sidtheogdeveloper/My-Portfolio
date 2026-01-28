@@ -545,6 +545,20 @@ function App() {
             <div className="grid lg:grid-cols-2 gap-10">
               {[
                 {
+                  title: "ProjectGenius",
+                  description: "AI-powered project planning and validation platform that transforms raw ideas into structured, actionable development roadmaps",
+                  features: [
+                    "AI-generated project blueprints with tech stack recommendations",
+                    "Project validation with risk assessment and market analysis",
+                    "Smart roadmap generation with milestones and task prioritization"
+                  ],
+                  tech: ["AI/ML", "React", "TypeScript", "Supabase"],
+                  github: "https://github.com/Sidtheogdeveloper/project-genius",
+                  website: "https://projectgeniuspro.netlify.app",
+                  color: "violet",
+                  icon: "🧠"
+                }
+                ,{
                   title: "StockTrader Pro",
                   description: "Data-driven investment ingsights platform with market analysis and trading suggestions",
                   features: [
