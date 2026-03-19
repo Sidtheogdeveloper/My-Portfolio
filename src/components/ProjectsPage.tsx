@@ -74,7 +74,7 @@ const ProjectsPage = () => {
         "AI Language Models"
       ],
       github: "https://github.com/Sidtheogdeveloper/project-genius",
-      website: "https://projectgeniuspro.netlifyapp",
+      website: "https://projectgeniuspro.netlify.app",
       color: "purple",
       icon: "🧠",
       status: "Live",
