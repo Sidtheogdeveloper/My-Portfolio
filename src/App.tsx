@@ -318,7 +318,7 @@ function App() {
                   institution: "SSN College of Engineering, Chennai",
                   duration: "August 2023 - Present",
                   course: "Master of Technology (5-Years Integrated) Computer Science Engineering",
-                  performance: "CGPA: 8.036",
+                  performance: "CGPA: 8.139",
                   color: "blue"
                 },
                 {
