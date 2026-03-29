@@ -395,13 +395,13 @@ function App() {
                 },
                 {
                   category: "Tools",
-                  skills: ["Git", "Unreal Engine"],
+                  skills: ["AI Tools","Git", "Unreal Engine"],
                   icon: "⚙️",
                   color: "purple"
                 },
                 {
                   category: "Machine Learning",
-                  skills: ["Supervised Learning", "Unsupervised Learning"],
+                  skills: ["Supervised Learning", "Unsupervised Learning", "NLP"],
                   icon: "🤖",
                   color: "green"
                 },
