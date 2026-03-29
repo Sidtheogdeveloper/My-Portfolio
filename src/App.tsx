@@ -815,57 +815,99 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Achievements Section */}
-      <section id="achievements" className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className={`transition-all duration-1000 delay-200 ${
-            isVisible.achievements ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+  
+  {/* Achievements Section */}
+  <section id="achievements" className="py-24">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className={`transition-all duration-1000 delay-200 ${
+        isVisible.achievements ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+            Achievements & Recognition
+          </h2>
+          <div className="w-32 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full"></div>
+          <p className="text-gray-300 mt-8 text-xl max-w-3xl mx-auto">
+            Recognition for academic excellence and outstanding performance
+          </p>
+        </div>
+  
+        <div className="max-w-4xl mx-auto space-y-10">
+  
+          {/* Achievement 1 */}
+          <div className={`bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-emerald-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10 ${
+            isVisible.achievements ? 'animate-fade-in-up' : ''
           }`}>
-            <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                Achievements & Recognition
-              </h2>
-              <div className="w-32 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full"></div>
-              <p className="text-gray-300 mt-8 text-xl max-w-3xl mx-auto">
-                Recognition for academic excellence and outstanding performance
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className={`bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-emerald-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10 ${
-                isVisible.achievements ? 'animate-fade-in-up' : ''
-              }`}>
-                <div className="flex items-start gap-8">
-                  <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
-                    🏆
+            <div className="flex items-start gap-8">
+              <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
+                🏆
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-3">Student of the Class Award</h3>
+                    <h4 className="text-xl font-semibold text-emerald-400 mb-4">Grade 12</h4>
+                    <p className="text-gray-300 leading-relaxed text-lg mb-4">
+                      Recognized for outstanding academic performance and exemplary conduct throughout the academic year.
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                      <span className="text-emerald-400 font-medium">
+                        Lalaji Memorial Omega International School
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex flex-col lg:flex-row lg:items-start justify-between">
-                      <div>
-                        <h3 className="text-3xl font-bold text-white mb-3">Student of the Class Award</h3>
-                        <h4 className="text-xl font-semibold text-emerald-400 mb-4">Grade 12</h4>
-                        <p className="text-gray-300 leading-relaxed text-lg mb-4">
-                          Recognized for outstanding academic performance and exemplary conduct throughout the academic year.
-                        </p>
-                        <div className="flex items-center gap-3">
-                          <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                          <span className="text-emerald-400 font-medium">Lalaji Memorial Omega International School</span>
-                        </div>
-                      </div>
-                      <div className="mt-6 lg:mt-0 lg:ml-8">
-                        <div className="inline-block px-6 py-3 bg-emerald-500/20 rounded-full">
-                          <span className="text-emerald-400 font-bold text-lg">Academic Excellence</span>
-                        </div>
-                      </div>
+                  <div className="mt-6 lg:mt-0 lg:ml-8">
+                    <div className="inline-block px-6 py-3 bg-emerald-500/20 rounded-full">
+                      <span className="text-emerald-400 font-bold text-lg">Academic Excellence</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+  
+          {/* Achievement 2 */}
+          <div className={`bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-teal-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/10 ${
+            isVisible.achievements ? 'animate-fade-in-up delay-200' : ''
+          }`}>
+            <div className="flex items-start gap-8">
+              <div className="w-20 h-20 bg-teal-500/20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
+                🚀
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-3">
+                      Track Winner – NXTGEN Hackathon (Texus 26')
+                    </h3>
+                    <h4 className="text-xl font-semibold text-teal-400 mb-4">
+                      Voyage Tech
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed text-lg mb-4">
+                      Secured Track Winner position for developing an innovative and impactful solution during the NXTGEN Hackathon at Texus 26'.
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
+                      <span className="text-teal-400 font-medium">
+                        Competitive Hackathon Achievement
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mt-6 lg:mt-0 lg:ml-8">
+                    <div className="inline-block px-6 py-3 bg-teal-500/20 rounded-full">
+                      <span className="text-teal-400 font-bold text-lg">Winner</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-black/20">
