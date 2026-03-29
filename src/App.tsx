@@ -835,6 +835,50 @@ function App() {
         <div className="max-w-4xl mx-auto space-y-10">
   
           {/* Achievement 1 */}
+          {/* Achievement 2 */}
+          <div className={`bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-teal-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/10 ${
+            isVisible.achievements ? 'animate-fade-in-up delay-200' : ''
+          }`}>
+            <div className="flex items-start gap-8">
+              <div className="w-20 h-20 bg-teal-500/20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
+                🚀
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-3">
+                      Track Winner – NXTGEN Hackathon (Texus 26')
+                    </h3>
+                    <h4 className="text-xl font-semibold text-teal-400 mb-4">
+                      Voyage Tech
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed text-lg mb-4">
+                      Secured Track Winner position for developing an innovative and impactful solution called "RoamIQ" during the NXTGEN Hackathon at Texus 26'.
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
+                      <span className="text-teal-400 font-medium">
+                        Competitive Hackathon Achievement
+                      </span>
+                      <a 
+                        href="https://github.com/Sidtheogdeveloper/RoamIQ" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block mt-2 text-teal-400 hover:text-teal-300 font-medium underline"
+                      >
+                        View Project →
+                      </a>
+                    </div>
+                  </div>
+                  <div className="mt-6 lg:mt-0 lg:ml-8">
+                    <div className="inline-block px-6 py-3 bg-teal-500/20 rounded-full">
+                      <span className="text-teal-400 font-bold text-lg">Winner</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={`bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-emerald-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10 ${
             isVisible.achievements ? 'animate-fade-in-up' : ''
           }`}>
@@ -867,42 +911,7 @@ function App() {
             </div>
           </div>
   
-          {/* Achievement 2 */}
-          <div className={`bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-teal-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/10 ${
-            isVisible.achievements ? 'animate-fade-in-up delay-200' : ''
-          }`}>
-            <div className="flex items-start gap-8">
-              <div className="w-20 h-20 bg-teal-500/20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
-                🚀
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-col lg:flex-row lg:items-start justify-between">
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-3">
-                      Track Winner – NXTGEN Hackathon (Texus 26')
-                    </h3>
-                    <h4 className="text-xl font-semibold text-teal-400 mb-4">
-                      Voyage Tech
-                    </h4>
-                    <p className="text-gray-300 leading-relaxed text-lg mb-4">
-                      Secured Track Winner position for developing an innovative and impactful solution during the NXTGEN Hackathon at Texus 26'.
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      <span className="text-teal-400 font-medium">
-                        Competitive Hackathon Achievement
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mt-6 lg:mt-0 lg:ml-8">
-                    <div className="inline-block px-6 py-3 bg-teal-500/20 rounded-full">
-                      <span className="text-teal-400 font-bold text-lg">Winner</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        
   
         </div>
       </div>
