@@ -466,8 +466,23 @@ function App() {
             <div className="space-y-16">
               {[
                 {
+                  company: "Tata Motors Digital.AI Labs Limited.",
+                  position: "Intern",
+                  duration: "May 2026 - June 2026",
+                  responsibilities: [
+                    "Developed and evaluated machine learning models to solve engineering and business problems using large-scale datasets.",
+                    "Analyzed customer leads and sales pipeline data to identify trends, uncover insights, and support data-driven decision-making.",
+                    "Built data preprocessing and analysis pipelines to improve the quality and usability of business data.",
+                    "Optimized lead management and digital engagement strategies through statistical analysis and machine learning techniques.",
+                    "Presented actionable insights and recommendations to support business strategy and operational improvements.",
+                    "Evaluated model performance, experimented with different algorithms, and refined solutions for better accuracy and business impact.",
+                    "Worked with large business datasets to develop scalable, data-driven solutions that improved decision-making and operational efficiency."
+                  ],
+                  color: "orange"
+                },
+                {
                   company: "StudAI Edutech Pvt.Ltd.",
-                  position: "R&D Developer",
+                  position: "R&D Developer Intern",
                   duration: "January 2025 - April 2025",
                   responsibilities: [
                     "Researched AI Lab implementation in South Indian colleges; analyzed feasibility of Centers of Excellence (COEs).",
