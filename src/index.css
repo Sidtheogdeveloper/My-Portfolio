@@ -24,4 +24,10 @@
 @media(max-width:420px){
   .section-wrap{width:calc(100% - 28px)}.topbar{width:calc(100% - 28px)}.brand{font-size:12px}.brand-mark{width:28px;height:28px}.hero{padding-top:48px}.hero h1{font-size:47px}.hero-actions{align-items:stretch;flex-direction:column}.primary-action{justify-content:center;width:100%}.text-action{justify-content:center;width:max-content;margin:auto}.hero-console{padding:16px}.profile-block h2{font-size:19px}.stat-row strong{font-size:20px}.stat-row span{font-size:7px}.section-heading h2{font-size:40px}.project-card{grid-template-columns:31px 1fr}.project-index{font-size:10px}.project-actions{grid-column:1 / -1;padding-left:31px}.project-actions div{gap:15px}.credential-list a>span{max-width:72%}.credential-list a small{font-size:8px}.contact-email{font-size:15px;gap:10px}.archive-nav{width:calc(100% - 28px)}.archive-hero h1{font-size:48px}.case-study{grid-template-columns:28px 1fr}.case-rail{font-size:10px}.case-content h2{font-size:39px}.case-footer{gap:10px}
 }
+@media(max-width:800px){
+  .credentials-grid,.credential-panel,.credential-list,.credential-list li{min-width:0;max-width:100%}
+  .credential-list a{display:block;min-width:0;max-width:100%}
+  .credential-list a>span{display:block;max-width:100%;overflow-wrap:anywhere}
+  .credential-list a>small{display:inline-flex;margin-top:7px;padding:6px 0;font-size:9px}
+}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
