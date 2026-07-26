@@ -1,410 +1,82 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, ExternalLink, Code, Calendar, Star, Github, Globe, ChevronRight } from 'lucide-react';
+import { ArrowDownRight, ArrowLeft, Check, ExternalLink, Github, Layers3, Target, Trophy } from 'lucide-react';
 
-const ProjectsPage = () => {
-  const [isVisible, setIsVisible] = useState({});
+const projects = [
+  {
+    id: 'roamiq', number: '00', title: 'RoamIQ', classification: 'WINNING MISSION · NXTGEN HACKATHON', accent: 'lime',
+    overview: 'A travel intelligence concept designed to help people move from vague trip intent to a more informed, confident journey.',
+    story: 'Built for the NXTGEN Hackathon at Texus ’26, RoamIQ explored how an assistant-like travel experience could make planning feel less fragmented. The work earned Track Winner recognition for its combination of product clarity, user-centric thinking, and technical ambition.',
+    outcomes: ['Track Winner at NXTGEN Hackathon, Texus ’26', 'Defined a clearer path from travel discovery to decision', 'Framed a scalable product experience around useful trip intelligence'],
+    modules: [
+      ['Intent-aware discovery', 'Connects traveler needs with relevant options instead of a generic search flow.'],
+      ['Journey workspace', 'Organizes the information needed to turn a promising idea into a practical itinerary.'],
+      ['Decision signals', 'Surfaces useful context at the moment a traveler is weighing alternatives.']
+    ],
+    tech: ['Product Strategy', 'Web Development', 'UX Thinking', 'Rapid Prototyping'], github: 'https://github.com/Sidtheogdeveloper/RoamIQ'
+  },
+  {
+    id: 'projectgenius', number: '01', title: 'ProjectGenius', classification: 'AI PRODUCT · LIVE', accent: 'violet',
+    overview: 'An AI-powered workspace that converts raw ideas into validated project plans, focused roadmaps, and build-ready direction.',
+    story: 'ProjectGenius was designed around the early, messy stage of product creation. It helps makers structure their thinking before they commit time and resources—combining technical recommendations, feasibility signals, and iterative AI guidance in one considered workspace.',
+    outcomes: ['Transforms rough concepts into structured blueprints', 'Creates milestone-based implementation roadmaps', 'Offers validation and risk-aware guidance for early decisions'],
+    modules: [['AI project generation', 'Turns a prompt into technology suggestions, scope, architecture and priority guidance.'], ['Validation & scoring', 'Brings feasibility and improvement signals into the earliest product conversations.'], ['Roadmap generator', 'Turns strategic direction into actionable milestones and development sequencing.']],
+    tech: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'AI/ML'], github: 'https://github.com/Sidtheogdeveloper/project-genius', live: 'https://projectgeniuspro.netlify.app'
+  },
+  {
+    id: 'stocktrader', number: '02', title: 'StockTrader Pro', classification: 'DATA INTELLIGENCE · LIVE', accent: 'gold',
+    overview: 'A research-oriented investment platform that turns market patterns and historical data into clearer, responsible insights.',
+    story: 'StockTrader Pro investigates how machine learning and accessible visual analysis can help users interrogate market history. Rather than treating a model as a crystal ball, the product focuses on surfacing patterns, tracking signals, and providing a more legible research process.',
+    outcomes: ['Historical market data analysis', 'Pattern-oriented ML exploration', 'Investment research and portfolio context'],
+    modules: [['Data analysis', 'Processes historical market information to reveal signals and trends.'], ['ML exploration', 'Tests data-driven approaches for discovering relationships in market movement.'], ['Insight workspace', 'Makes research findings easier to inspect and use in a personal workflow.']],
+    tech: ['Machine Learning', 'React', 'Financial APIs', 'Data Analysis'], github: 'https://github.com/Sidtheogdeveloper/StockTradersPro', live: 'https://stocktraderspro.netlify.app'
+  },
+  {
+    id: 'ezcabz', number: '03', title: 'EzCabz', classification: 'SYSTEM DESIGN', accent: 'cyan',
+    overview: 'A Python-based ride-booking application with intelligent driver assignment and a complete data management backbone.',
+    story: 'EzCabz was an exercise in thinking through a familiar service as a system. The project brings booking, driver matching, user data and ride data into one connected application, with an assignment approach that considers time and driver rating.',
+    outcomes: ['Driver matching informed by availability and rating', 'API structure for users, drivers and rides', 'End-to-end ride booking flow'],
+    modules: [['Smart assignment', 'Matches a rider with an appropriate driver through relevant service signals.'], ['Ride management', 'Captures booking and ride data in a cohesive application flow.'], ['Backend foundation', 'Uses an API-led architecture to keep core data operations organized.']],
+    tech: ['Python', 'Django', 'Database Management', 'API Design'], github: 'https://github.com/Sidtheogdeveloper/EzCabz'
+  },
+  {
+    id: 'budget-tracker', number: '04', title: 'Budget Tracker', classification: 'PERSONAL FINANCE TOOL', accent: 'gold',
+    overview: 'A Python-based personal finance application for tracking budgets, organizing expenses, and making spending patterns easier to understand.',
+    story: 'This project focused on the fundamentals of a reliable personal finance workflow: simple expense capture, practical budget planning, and efficient database-backed storage. It translates day-to-day transactions into a clearer view of financial habits and goals.',
+    outcomes: ['Budget and expense tracking in one workflow', 'Database integration for reliable data storage and retrieval', 'Financial insights through categorization and reporting'],
+    modules: [['Expense categorization', 'Keeps spending understandable through clear organization and custom categories.'], ['Budget planning', 'Supports monthly and yearly planning with up-to-date tracking.'], ['Goal setting', 'Makes it possible to define and monitor personal financial targets.']],
+    tech: ['Python', 'MySQL', 'Tkinter', 'Data Analytics'], github: 'https://github.com/Sidtheogdeveloper/Budget-Tracker-App'
+  },
+  {
+    id: 'vehicle-maintenance', number: '05', title: 'Vehicle Maintenance & Driver Assistance', classification: 'INTELLIGENT MOBILITY SYSTEM', accent: 'cyan',
+    overview: 'An intelligent vehicle monitoring concept that combines maintenance intelligence, alerting, and driver-assistance ideas for safer operations.',
+    story: 'The platform examines how connected vehicle signals and data-driven analysis can help surface maintenance needs early while supporting drivers with contextual safety alerts. It brings a future-facing mobility problem into a structured, technically grounded system design.',
+    outcomes: ['Predictive maintenance concept for earlier intervention', 'Driver-assistance and safety alert modules', 'Fleet-oriented vehicle health and maintenance visibility'],
+    modules: [['Maintenance intelligence', 'Uses data-oriented thinking to anticipate vehicle service needs before failure.'], ['Driver assistance', 'Frames safety support around timely alerts such as collision and traffic-sign awareness.'], ['Fleet management', 'Provides a model for organizing vehicles, health states and maintenance schedules.']],
+    tech: ['Machine Learning', 'Python', 'Database Integration', 'Web Development', 'Data Analytics'], github: 'https://github.com/tri-tt-hik/Vehicle_maintenance_driver_assistance'
+  }
+];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const projects = [
-    {
-      id: "projectgenius-ai",
-      title: "ProjectGenius",
-      subtitle: "AI-Powered Project Planning Platform",
-      description: "An intelligent AI-driven platform that transforms raw ideas into structured, actionable project plans with validation, roadmaps, and expert insights.",
-      longDescription: "ProjectGenius is a comprehensive AI-powered project planning and validation platform designed for developers, product managers, and entrepreneurs. It helps users convert early-stage ideas into well-structured project blueprints by providing intelligent tech stack recommendations, feature breakdowns, timeline estimates, and architectural guidance. With built-in project validation, risk assessment, smart roadmaps, and interactive AI chat, ProjectGenius empowers users to make confident, data-driven decisions throughout the project lifecycle.",
-      features: [
-        "An AI-powered project planning platform that generates structured project blueprints, validates ideas, and creates actionable development roadmaps"
-      ],
-      detailedFeatures: [
-        {
-          title: "AI Project Generation",
-          description: "Transforms raw ideas into complete project plans with tech stack suggestions, feature prioritization, timelines, and architecture guidance",
-          icon: "🎯"
-        },
-        {
-          title: "Project Validation & Scoring",
-          description: "Evaluates project feasibility with risk assessment, improvement suggestions, and market fit analysis",
-          icon: "✅"
-        },
-        {
-          title: "Interactive AI Chat",
-          description: "Context-aware conversations for iterative refinement and expert guidance on technical and business decisions",
-          icon: "💬"
-        },
-        {
-          title: "Smart Roadmap Generator",
-          description: "Week-by-week implementation plans with milestones, task prioritization, and customizable parameters",
-          icon: "🗺️"
-        },
-        {
-          title: "Project History & Sharing",
-          description: "Persistent project storage with shareable public links, analytics, and professional previews",
-          icon: "📊"
-        },
-        {
-          title: "Export & Documentation",
-          description: "Professional PDF exports, copy-to-clipboard insights, and presentation-ready formatting",
-          icon: "📄"
-        }
-      ],
-      tech: [
-        "React 18",
-        "TypeScript",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "Supabase",
-        "PostgreSQL",
-        "AI Language Models"
-      ],
-      github: "https://github.com/Sidtheogdeveloper/project-genius",
-      website: "https://projectgeniuspro.netlify.app",
-      color: "purple",
-      icon: "🧠",
-      status: "Live",
-      timeline: "3 months"
-    },
-    {
-      id: 'stocktrader-pro',
-      title: "StockTrader Pro",
-      subtitle: "AI-Powered Investment Platform",
-      description: "A sophisticated machine learning-powered web application that analyzes historical stock data and market trends to provide intelligent investment insights and trading recommendations.",
-      longDescription: "StockTrader Pro leverages advanced machine learning algorithms and big data analytics to democratize investment intelligence. The platform processes vast amounts of historical market data, identifies patterns, and generates actionable investment insights. With real-time market analysis, risk assessment, and portfolio optimization features, it serves both novice and experienced investors seeking data-driven investment strategies.",
-      features: [
-        "A machine learning-powered web application that analyzes historical stock data, and market trends to provide smart investment insights"
-      ],
-      detailedFeatures: [
-        {
-          title: "ML-Powered Analysis",
-          description: "Advanced algorithms analyzing market patterns and predicting trends",
-          icon: "🤖"
-        },
-        {
-          title: "Real-time Data",
-          description: "Live data integration with instant analysis and alerts",
-          icon: "⚡"
-        },
-        {
-          title: "Portfolio Tracking",
-          description: "Easy tracking of investments with performance metrics and risk assessment",
-          icon: "📊"
-        },
-      ],
-      tech: ["Machine Learning", "React", "Financial APIs", "Cloud Deployment"],
-      github: "https://github.com/Sidtheogdeveloper/StockTradersPro",
-      website: "https://stocktraderspro.netlify.app",
-      color: "orange",
-      icon: "📈",
-      status: "Live",
-      timeline: "2 months"
-    },
-    {
-      id: 'cab-hailing',
-      title: "Cab Hailing App",
-      subtitle: "EzCabz - Smart Transportation Solution",
-      description: "A comprehensive Python-based ride booking application that revolutionizes urban transportation with intelligent algorithms and seamless user experience.",
-      longDescription: "EzCabz represents a complete transportation ecosystem built from the ground up using Python. The application features sophisticated driver assignment algorithms that consider multiple factors including driver ratings, proximity, and availability to ensure optimal ride experiences. The platform includes comprehensive user management, real-time tracking, and a robust API infrastructure that handles thousands of concurrent requests.",
-      features: [
-        "Developed a Python-based application to book cab rides",
-        "Developed an algorithm that assigns the driver with the time and rating of the driver",
-        "Developed an API server that stores the data of users, drivers, and rides"
-      ],
-      detailedFeatures: [
-        {
-          title: "Smart Driver Assignment",
-          description: "Advanced algorithm considering driver ratings, location proximity, and availability",
-          icon: "🎯"
-        },
-        {
-          title: "Real-time Tracking",
-          description: "Live tracking for both riders and drivers with ETA calculations",
-          icon: "📍"
-        },
-        {
-          title: "Comprehensive API",
-          description: "RESTful API handling user management, and ride booking.",
-          icon: "🔗"
-        },
-        {
-          title: "Rating System",
-          description: "Bidirectional rating system for quality assurance and service improvement",
-          icon: "⭐"
-        }
-      ],
-      tech: ["Python", "Flask/Django", "PostgreSQL", "Redis", "Google Maps API", "WebSocket"],
-      github: "https://github.com/Sidtheogdeveloper/EzCabz",
-      color: "purple",
-      icon: "🚗",
-      status: "Completed",
-      timeline: "3 months"
-    },
-    {
-      id: 'budget-tracker',
-      title: "Budget Tracking App",
-      subtitle: "Personal Finance Management System",
-      description: "An intelligent financial management application that empowers users to take control of their personal finances through comprehensive budget tracking and insightful analytics.",
-      longDescription: "This budget tracking application goes beyond simple expense logging to provide users with deep insights into their spending patterns. Built with Python and featuring a robust database architecture, the app offers real-time financial tracking, categorized expense management, and predictive budgeting capabilities. Users can set financial goals, receive spending alerts, and generate detailed financial reports.",
-      features: [
-        "Developed a Python-based application that helps users track their budget",
-        "Integrated a database to store and retrieve data efficiently"
-      ],
-      detailedFeatures: [
-        {
-          title: "Expense Categorization",
-          description: "Automatic categorization of expenses with custom category creation",
-          icon: "📊"
-        },
-        {
-          title: "Budget Planning",
-          description: "Set monthly/yearly budgets with real-time tracking and alerts",
-          icon: "🎯"
-        },
-        {
-          title: "Goal Setting",
-          description: "Set and track financial goals with progress monitoring",
-          icon: "🏆"
-        }
-      ],
-      tech: ["Python", "MySQL","Tkinter", "Data Analytics"],
-      github: "https://github.com/Sidtheogdeveloper/Budget-Tracker-App",
-      color: "green",
-      icon: "💰",
-      status: "Completed",
-      timeline: "1 months"
-    },
-    {
-      id: 'vehicle-maintenance',
-      title: "Vehicle Maintenance & Driver Assistance System",
-      subtitle: "Intelligent Automotive Platform",
-      description: "A cutting-edge vehicle monitoring and maintenance platform that combines IoT sensors, machine learning, and driver assistance technologies to ensure optimal vehicle performance and safety.",
-      longDescription: "This comprehensive automotive platform represents the future of vehicle management, integrating advanced IoT sensors with machine learning algorithms to provide predictive maintenance, real-time health monitoring, and intelligent driver assistance. The system continuously monitors vehicle parameters, predicts potential issues before they occur, and provides actionable insights to both drivers and fleet managers.",
-      features: [
-        "Developed an intelligent vehicle monitoring and maintenance platform featuring driver assistance modules and alerting systems"
-      ],
-      detailedFeatures: [
-        {
-          title: "Maintenance",
-          description: "AI-powered analysis to predict maintenance needs before breakdowns occur",
-          icon: "🔮"
-        },
-        {
-          title: "Driver Assistance",
-          description: "Advanced safety features including collision warnings and traffic sign alerts",
-          icon: "🛡️"
-        },
-        {
-          title: "Fleet Management",
-          description: "Comprehensive dashboard for managing multiple vehicles and maintenance schedules",
-          icon: "🚛"
-        }
-      ],
-      tech: [ "Machine Learning", "Python", "Database Integration", "Web Development", "Data Analytics"],
-      github: "https://github.com/tri-tt-hik/Vehicle_maintenance_driver_assistance",
-      color: "blue",
-      icon: "🔧",
-      status: "Completed",
-      timeline: "3 months"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <a
-              href="/"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
-            >
-              <ArrowLeft size={20} />
-              <span>Back to Portfolio</span>
-            </a>
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Projects Showcase
-            </div>
+export default function ProjectsPage() {
+  return <main className="site-shell archive-shell">
+    <div className="ambient ambient-one" /><div className="grid-overlay" />
+    <header className="archive-nav"><a href="/" className="back-link"><ArrowLeft size={16} /> BACK TO PROFILE</a><span>PROJECT ARCHIVE <b>06</b></span></header>
+    <section className="archive-hero section-wrap">
+      <p className="eyebrow"><span className="status-pulse" /> SELECTED BUILDS / 2022—2026</p>
+      <h1>From a sharp<br />question to a <em>useful</em> build.</h1>
+      <p>A collection of products, prototypes, and systems shaped through a mix of experimentation, focused execution, and user-centered problem solving.</p>
+      <div className="archive-rule"><span>EXPLORE THE CASE STUDIES</span><i /></div>
+    </section>
+    <section className="section-wrap case-list">
+      {projects.map((project) => <article id={project.id} className={`case-study ${project.accent}`} key={project.id}>
+        <div className="case-rail"><span>{project.number}</span><i /><span>{project.classification.includes('WINNING') ? <Trophy size={15} /> : <Layers3 size={15} />}</span></div>
+        <div className="case-content">
+          <header><p className="project-type">{project.classification}</p><h2>{project.title}</h2><p className="case-overview">{project.overview}</p></header>
+          <div className="case-body"><div className="case-story"><span>THE BRIEF</span><p>{project.story}</p><div className="outcome-list">{project.outcomes.map(outcome => <div key={outcome}><Check size={14} /> {outcome}</div>)}</div></div>
+            <div className="module-stack"><span>CORE MODULES</span>{project.modules.map(([title, description], i) => <div className="module" key={title}><b>0{i + 1}</b><div><h3>{title}</h3><p>{description}</p></div></div>)}</div>
           </div>
+          <footer className="case-footer"><div className="case-tech">{project.tech.map(tech => <span key={tech}>{tech}</span>)}</div><div className="case-links"><a href={project.github} target="_blank" rel="noreferrer">VIEW CODE <Github size={15} /></a>{project.live && <a href={project.live} target="_blank" rel="noreferrer">LIVE PRODUCT <ExternalLink size={15} /></a>}</div></footer>
         </div>
-      </header>
-
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
-            Featured Projects
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Explore my journey through innovative software development, from intelligent transportation solutions 
-            to AI-powered financial platforms. Each project represents a unique challenge solved with creativity and cutting-edge technology.
-          </p>
-        </div>
-      </section>
-
-      {/* Projects Sections */}
-      {projects.map((project, index) => (
-        <section key={project.id} id={project.id} className={`py-20 ${index % 2 === 0 ? 'bg-black/20' : ''}`}>
-          <div className="max-w-6xl mx-auto px-6">
-            <div className={`transition-all duration-1000 delay-200 ${
-              isVisible[project.id] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              {/* Project Header */}
-              <div className="text-center mb-16">
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className={`w-20 h-20 bg-${project.color}-500/20 rounded-2xl flex items-center justify-center text-4xl`}>
-                    {project.icon}
-                  </div>
-                  <div className="text-left">
-                    <h2 className={`text-4xl font-bold bg-gradient-to-r from-${project.color}-400 to-${project.color}-600 bg-clip-text text-transparent`}>
-                      {project.title}
-                    </h2>
-                    <p className="text-gray-400 text-lg">{project.subtitle}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-center gap-6 mb-8">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} className="text-gray-400" />
-                    <span className="text-gray-300">{project.timeline}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Star size={16} className={`text-${project.color}-400`} />
-                    <span className={`text-${project.color}-400 font-medium`}>{project.status}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
-                {/* Project Description */}
-                <div className="space-y-8">
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                    <h3 className="text-2xl font-bold mb-4">Project Overview</h3>
-                    <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
-                    <p className="text-gray-400 leading-relaxed">{project.longDescription}</p>
-                  </div>
-
-                  {/* Key Features */}
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                    <h3 className="text-2xl font-bold mb-6">Key Features</h3>
-                    <div className="space-y-4">
-                      {project.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start gap-3">
-                          <ChevronRight size={20} className={`text-${project.color}-400 mt-0.5 flex-shrink-0`} />
-                          <span className="text-gray-300">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center gap-2 px-6 py-3 bg-${project.color}-500/20 hover:bg-${project.color}-500/30 rounded-lg transition-all duration-300 text-${project.color}-400 hover:text-white transform hover:scale-105`}
-                    >
-                      <Github size={20} />
-                      <span className="font-medium">View Code</span>
-                      <ExternalLink size={16} />
-                    </a>
-                    {project.website && (
-                      <a
-                        href={project.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex items-center gap-2 px-6 py-3 bg-${project.color}-500/20 hover:bg-${project.color}-500/30 rounded-lg transition-all duration-300 text-${project.color}-400 hover:text-white transform hover:scale-105`}
-                      >
-                        <Globe size={20} />
-                        <span className="font-medium">Live Demo</span>
-                        <ExternalLink size={16} />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Detailed Features & Tech Stack */}
-                <div className="space-y-8">
-                  {/* Detailed Features */}
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                    <h3 className="text-2xl font-bold mb-6">Technical Highlights</h3>
-                    <div className="grid gap-4">
-                      {project.detailedFeatures.map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className={`p-4 bg-${project.color}-500/10 rounded-xl border border-${project.color}-500/20 hover:border-${project.color}-500/40 transition-all duration-300`}
-                        >
-                          <div className="flex items-start gap-3">
-                            <span className="text-2xl">{feature.icon}</span>
-                            <div>
-                              <h4 className="font-semibold text-white mb-1">{feature.title}</h4>
-                              <p className="text-gray-400 text-sm">{feature.description}</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Tech Stack */}
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                    <h3 className="text-2xl font-bold mb-6">Technology Stack</h3>
-                    <div className="flex flex-wrap gap-3">
-                      {project.tech.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className={`px-4 py-2 bg-${project.color}-500/20 text-${project.color}-400 rounded-full text-sm font-medium border border-${project.color}-500/30 hover:bg-${project.color}-500/30 transition-all duration-300`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* Footer */}
-      <footer className="py-12 bg-black/40 border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-gray-400 mb-4">
-            Interested in collaborating on similar projects?
-          </p>
-          <a
-            href="mailto:siddharthmadhu2005@gmail.com"
-            className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold text-white hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300"
-          >
-            Get In Touch
-          </a>
-        </div>
-      </footer>
-    </div>
-
-  );
-};
-
-export default ProjectsPage;
+      </article>)}
+    </section>
+    <section className="archive-close"><div className="section-wrap"><p><Target size={17} /> MORE EXPERIENCES</p><h2>Good work starts<br />with genuine curiosity.</h2><a href="mailto:siddharthmadhu2005@gmail.com" className="primary-action">Start a conversation <ArrowDownRight size={18} /></a></div></section>
+  </main>;
+}
