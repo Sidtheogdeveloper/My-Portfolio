@@ -171,6 +171,23 @@ function App() {
         </div>
       </section>
 
+      <section id="activities" className="section-wrap activities-section">
+        <div className="section-heading"><span>05 / BEYOND THE BUILD</span><h2>Leadership, community,<br />and competitive spirit.</h2></div>
+        <div className="activities-grid">
+          <article className="activity-panel leadership-panel"><div className="activity-title"><Users size={20} /><div><p className="mini-label">UNIVERSITY ACTIVITIES</p><h3>Leadership &amp; community</h3></div></div><div className="role-list">
+            <div><span>JUN 2026 — PRESENT</span><p><b>Event Coordinator</b><br />Association of Computer Engineers (ACE), SSN CE</p></div>
+            <div><span>JUN 2026 — PRESENT</span><p><b>Senior Core Member</b><br />Computer Society of India, SSN Student Chapter</p></div>
+            <div><span>JUL 2025 — JUN 2026</span><p><b>Outreach Team Deputy Head</b><br />Computer Society of India, SSN Student Chapter</p></div>
+          </div></article>
+          <article className="activity-panel gaming-panel"><div className="activity-title"><Gamepad2 size={20} /><div><p className="mini-label">SSN GAMING CLUB</p><h3>Community builder</h3></div></div><div className="role-list">
+            <div><span>JUL 2026 — PRESENT</span><p><b>Head</b><br />Leading the club&apos;s direction, member community, and activities.</p></div>
+            <div><span>JUL 2025 — JUN 2026</span><p><b>Senior Core Member</b><br />Supported programming and club operations.</p></div>
+            <div><span>AUG 2024 — JUL 2025</span><p><b>Junior Core Member</b><br />Contributed to team initiatives and events.</p></div>
+          </div></article>
+          <article className="activity-panel cricket-panel"><div className="activity-title"><Trophy size={20} /><div><p className="mini-label">CRICKET</p><h3>Team sport &amp; competition</h3></div></div><div className="cricket-list"><div><b>Vice-Captain, School Cricket Team</b><p>Represented the school in inter-school tournaments and helped guide team strategy and performance.</p></div><div><b>Member, College Cricket Team</b><p>Participated in college-level tournaments through consistent teamwork and performance.</p></div><div><b>Representative, Kancheepuram District Cricket Team (U-16)</b><p>Played in district-level tournaments at a competitive level.</p></div><div><b>TNCA U-16 Round Robin Tournament · 2021–22</b><p>Gained state-level match experience against leading players.</p></div></div></article>
+        </div>
+      </section>
+
       <section id="contact" className="contact-section">
         <div className="contact-inner section-wrap"><span>05 / OPEN CHANNEL</span><h2>Have a worthwhile<br />challenge in mind?</h2><p>I&apos;m always interested in thoughtful teams, ambitious products, and opportunities to make something that matters.</p><a href="mailto:siddharthmadhu2005@gmail.com" className="contact-email">siddharthmadhu2005@gmail.com <ArrowUpRight size={23} /></a><div className="contact-links"><a href="tel:+919150914685">+91 91509 14685</a><a href="https://www.linkedin.com/in/siddharth-madhu17092005/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LINKEDIN</a><a href="https://github.com/Sidtheogdeveloper" target="_blank" rel="noreferrer"><Github size={16} /> GITHUB</a></div></div>
       </section>
