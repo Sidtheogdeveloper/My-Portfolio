@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   ArrowDownRight, ArrowUpRight, Award, ChevronRight,
   Code2, ExternalLink, Github, GraduationCap, Layers3, Linkedin,
-  MapPin, Menu, Sparkles, Target, Trophy, X
+  Gamepad2, MapPin, Menu, Sparkles, Target, Trophy, Users, X
 } from 'lucide-react';
 
 const projects = [
@@ -59,6 +59,7 @@ function App() {
           <button onClick={() => scrollTo('about')}>Profile</button>
           <button onClick={() => scrollTo('work')}>Selected work</button>
           <button onClick={() => scrollTo('journey')}>Journey</button>
+          <button onClick={() => scrollTo('activities')}>Activities</button>
           <button onClick={() => scrollTo('credentials')}>Credentials</button>
           <button onClick={() => scrollTo('contact')} className="nav-contact">Let&apos;s talk <ArrowUpRight size={14} /></button>
         </nav>
@@ -139,18 +140,25 @@ function App() {
         <div className="section-heading"><span>03 / JOURNEY LOG</span><h2>Experience earned<br />in the field.</h2></div>
         <div className="journey-grid">
           <div className="timeline">
-            <article><span>2026</span><div><p className="timeline-type">DATA &amp; ML INTERN</p><h3>Tata Motors Digital.AI Labs</h3><p>Explored large-scale business data, built analysis pipelines, and evaluated ML approaches that support better decision-making.</p></div></article>
-            <article><span>2025</span><div><p className="timeline-type">R&amp;D DEVELOPER INTERN</p><h3>StudAI Edutech</h3><p>Researched AI lab implementation and open-source model opportunities for academic technology programs.</p></div></article>
-            <article><span>2022</span><div><p className="timeline-type">DIGITAL MARKETING INTERN</p><h3>Mindler Inc.</h3><p>Conducted market and competitive research to help identify new growth opportunities.</p></div></article>
+            <article><span>2026</span><div><p className="timeline-type">DATA &amp; ML INTERN</p><h3>Tata Motors Digital.AI Labs</h3><p>Explored large-scale business data, built analysis pipelines, and evaluated ML approaches that support better decision-making.</p></div>
+            <a href="https://drive.google.com/file/d/1MlawYtZ9YRHMnHeMPM_l9rYus_zeLgc3/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
+            </article>
+            <article><span>2025</span><div><p className="timeline-type">R&amp;D DEVELOPER INTERN</p><h3>StudAI Edutech</h3><p>Researched AI lab implementation and open-source model opportunities for academic technology programs.</p></div>
+            <a href="https://drive.google.com/file/d/1zzR3ruEC70n84T8ioVOHaqXglGcEmYv1/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
+            </article>
+            <article><span>2022</span><div><p className="timeline-type">DIGITAL MARKETING INTERN</p><h3>Mindler Inc.</h3><p>Conducted market and competitive research to help identify new growth opportunities.</p></div>
+            <a href="https://drive.google.com/file/d/1Kq3BwpDBTOQcH6sM_Lbr_Uz4lk2uOcDK/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
+            </article>
           </div>
           <aside className="achievement-card"><div className="trophy"><Trophy size={29} /></div><p className="mini-label">NOTABLE UNLOCK</p><h3>Track Winner</h3><p>NXTGEN Hackathon<br /><b>Texus ’26</b></p><a href="https://github.com/Sidtheogdeveloper/RoamIQ" target="_blank" rel="noreferrer">See RoamIQ <ArrowUpRight size={15} /></a></aside>
         </div>
       </section>
 
+
       <section id="credentials" className="section-wrap credentials-section">
         <div className="section-heading"><span>04 / CREDENTIALS</span><h2>Proof of practice,<br />not just potential.</h2></div>
         <div className="credentials-grid">
-          <article className="credential-panel education-panel"><GraduationCap size={21} /><p className="mini-label">ACADEMIC PATH</p><h3>SSN College of Engineering</h3><p>M.Tech Integrated Computer Science Engineering · August 2023 – Present</p><b>CGPA 8.139</b><hr /><h4>Lalaji Memorial Omega International School</h4><p>Grade 12 · June 2022 – May 2023</p><b>95%</b></article>
+          <article className="credential-panel education-panel"><GraduationCap size={21} /><p className="mini-label">ACADEMIC PATH</p><h3>SSN College of Engineering</h3><p>M.Tech Integrated Computer Science Engineering · August 2023 – May 2028</p><b>CGPA 8.139</b><hr /><h4>Lalaji Memorial Omega International School</h4><p>Grade 12 · June 2022 – May 2023</p><b>95%</b></article>
           <article className="credential-panel"><Award size={21} /><p className="mini-label">CERTIFICATIONS</p><ul className="compact-list credential-list">
             {[
               ['Full-Stack Web Application Development using Spring Boot and Vue.js'],
@@ -165,8 +173,25 @@ function App() {
         </div>
       </section>
 
+      <section id="activities" className="section-wrap activities-section">
+        <div className="section-heading"><span>05 / BEYOND THE BUILD</span><h2>Leadership, community,<br />and competitive spirit.</h2></div>
+        <div className="activities-grid">
+          <article className="activity-panel leadership-panel"><div className="activity-title"><Users size={20} /><div><p className="mini-label">UNIVERSITY ACTIVITIES</p><h3>Leadership &amp; community</h3></div></div><div className="role-list">
+            <div><span>JUN 2026 — PRESENT</span><p><b>Event Coordinator</b><br />Association of Computer Engineers (ACE), SSN CE</p></div>
+            <div><span>JUN 2026 — PRESENT</span><p><b>Senior Core Member</b><br />Computer Society of India, SSN Student Chapter</p></div>
+            <div><span>JUL 2025 — JUN 2026</span><p><b>Outreach Team Deputy Head</b><br />Computer Society of India, SSN Student Chapter</p></div>
+          </div></article>
+          <article className="activity-panel gaming-panel"><div className="activity-title"><Gamepad2 size={20} /><div><p className="mini-label">SSN GAMING CLUB</p><h3>Community builder</h3></div></div><div className="role-list">
+            <div><span>JUL 2026 — PRESENT</span><p><b>Head</b><br />Leading the club&apos;s direction, member community, and activities.</p></div>
+            <div><span>JUL 2025 — JUN 2026</span><p><b>Senior Core Member</b><br />Supported programming and club operations.</p></div>
+            <div><span>AUG 2024 — JUL 2025</span><p><b>Junior Core Member</b><br />Contributed to team initiatives and events.</p></div>
+          </div></article>
+          <article className="activity-panel cricket-panel"><div className="activity-title"><Trophy size={20} /><div><p className="mini-label">CRICKET</p><h3>Team sport &amp; competition</h3></div></div><div className="cricket-list"><div><b>Vice-Captain, School Cricket Team</b><p>Represented the school in inter-school tournaments and helped guide team strategy and performance.</p></div><div><b>Member, College Cricket Team</b><p>Participated in college-level tournaments through consistent teamwork and performance.</p></div><div><b>Representative, Kancheepuram District Cricket Team (U-16)</b><p>Played in district-level tournaments at a competitive level.</p></div><div><b>TNCA U-16 Round Robin Tournament · 2021–22</b><p>Gained state-level match experience against leading players.</p></div></div></article>
+        </div>
+      </section>
+
       <section id="contact" className="contact-section">
-        <div className="contact-inner section-wrap"><span>05 / OPEN CHANNEL</span><h2>Have a worthwhile<br />challenge in mind?</h2><p>I&apos;m always interested in thoughtful teams, ambitious products, and opportunities to make something that matters.</p><a href="mailto:siddharthmadhu2005@gmail.com" className="contact-email">siddharthmadhu2005@gmail.com <ArrowUpRight size={23} /></a><div className="contact-links"><a href="tel:+919150914685">+91 91509 14685</a><a href="https://www.linkedin.com/in/siddharth-madhu17092005/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LINKEDIN</a><a href="https://github.com/Sidtheogdeveloper" target="_blank" rel="noreferrer"><Github size={16} /> GITHUB</a></div></div>
+        <div className="contact-inner section-wrap"><span>06 / OPEN CHANNEL</span><h2>Have a worthwhile<br />challenge in mind?</h2><p>I&apos;m always interested in thoughtful teams, ambitious products, and opportunities to make something that matters.</p><a href="mailto:siddharthmadhu2005@gmail.com" className="contact-email">siddharthmadhu2005@gmail.com <ArrowUpRight size={23} /></a><div className="contact-links"><a href="tel:+919150914685">+91 91509 14685</a><a href="https://www.linkedin.com/in/siddharth-madhu17092005/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LINKEDIN</a><a href="https://github.com/Sidtheogdeveloper" target="_blank" rel="noreferrer"><Github size={16} /> GITHUB</a></div></div>
       </section>
 
       <footer><span>© 2026 SIDDHARTH MADHU RAO</span><span>DESIGNED WITH INTENTION <Sparkles size={13} /></span></footer>
