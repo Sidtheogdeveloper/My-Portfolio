@@ -51,7 +51,6 @@ function App() {
       <div className="grid-overlay" />
 
       <header className="topbar">
-        <meta name="google-site-verification" content="uWNtZjMmNPthZyF2sjaaLySStXDAQ0s4J7mz2TzryOI" />
         <button className="brand" onClick={() => scrollTo('home')} aria-label="Back to top">
           <span className="brand-mark">S</span>
           <span>SIDDHARTH<span className="brand-dot">.</span></span>
