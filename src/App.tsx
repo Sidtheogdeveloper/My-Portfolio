@@ -51,6 +51,7 @@ function App() {
       <div className="grid-overlay" />
 
       <header className="topbar">
+        <meta name="google-site-verification" content="uWNtZjMmNPthZyF2sjaaLySStXDAQ0s4J7mz2TzryOI" />
         <button className="brand" onClick={() => scrollTo('home')} aria-label="Back to top">
           <span className="brand-mark">S</span>
           <span>SIDDHARTH<span className="brand-dot">.</span></span>
@@ -141,13 +142,13 @@ function App() {
         <div className="journey-grid">
           <div className="timeline">
             <article><span>2026</span><div><p className="timeline-type">DATA &amp; ML INTERN</p><h3>Tata Motors Digital.AI Labs</h3><p>Explored large-scale business data, built analysis pipelines, and evaluated ML approaches that support better decision-making.</p></div>
-            <a href="https://drive.google.com/file/d/1MlawYtZ9YRHMnHeMPM_l9rYus_zeLgc3/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
+              <a href="https://drive.google.com/file/d/1MlawYtZ9YRHMnHeMPM_l9rYus_zeLgc3/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
             </article>
             <article><span>2025</span><div><p className="timeline-type">R&amp;D DEVELOPER INTERN</p><h3>StudAI Edutech</h3><p>Researched AI lab implementation and open-source model opportunities for academic technology programs.</p></div>
-            <a href="https://drive.google.com/file/d/1zzR3ruEC70n84T8ioVOHaqXglGcEmYv1/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
+              <a href="https://drive.google.com/file/d/1zzR3ruEC70n84T8ioVOHaqXglGcEmYv1/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
             </article>
             <article><span>2022</span><div><p className="timeline-type">DIGITAL MARKETING INTERN</p><h3>Mindler Inc.</h3><p>Conducted market and competitive research to help identify new growth opportunities.</p></div>
-            <a href="https://drive.google.com/file/d/1Kq3BwpDBTOQcH6sM_Lbr_Uz4lk2uOcDK/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
+              <a href="https://drive.google.com/file/d/1Kq3BwpDBTOQcH6sM_Lbr_Uz4lk2uOcDK/view?usp=drive_link" target="_blank" rel="noreferrer">Open credential <ExternalLink size={11} /></a>
             </article>
           </div>
           <aside className="achievement-card"><div className="trophy"><Trophy size={29} /></div><p className="mini-label">NOTABLE UNLOCK</p><h3>Track Winner</h3><p>NXTGEN Hackathon<br /><b>Texus ’26</b></p><a href="https://github.com/Sidtheogdeveloper/RoamIQ" target="_blank" rel="noreferrer">See RoamIQ <ArrowUpRight size={15} /></a></aside>
