@@ -51,7 +51,6 @@ function App() {
       <div className="grid-overlay" />
 
       <header className="topbar">
-        <meta name="google-site-verification" content="uWNtZjMmNPthZyF2sjaaLySStXDAQ0s4J7mz2TzryOI" />
         <button className="brand" onClick={() => scrollTo('home')} aria-label="Back to top">
           <span className="brand-mark">S</span>
           <span>SIDDHARTH<span className="brand-dot">.</span></span>
@@ -179,7 +178,7 @@ function App() {
         <div className="activities-grid">
           <article className="activity-panel leadership-panel"><div className="activity-title"><Users size={20} /><div><p className="mini-label">UNIVERSITY ACTIVITIES</p><h3>Leadership &amp; community</h3></div></div><div className="role-list">
             <div><span>JUN 2026 — PRESENT</span><p><b>Event Coordinator</b><br />Association of Computer Engineers (ACE), SSN CE</p></div>
-            <div><span>JUN 2026 — PRESENT</span><p><b>Senior Core Member</b><br />Computer Society of India, SSN Student Chapter</p></div>
+            <div><span>JUN 2026 — PRESENT</span><p><b>Vice-President</b><br />Computer Society of India, SSN Student Chapter</p></div>
             <div><span>JUL 2025 — JUN 2026</span><p><b>Outreach Team Deputy Head</b><br />Computer Society of India, SSN Student Chapter</p></div>
           </div></article>
           <article className="activity-panel gaming-panel"><div className="activity-title"><Gamepad2 size={20} /><div><p className="mini-label">SSN GAMING CLUB</p><h3>Community builder</h3></div></div><div className="role-list">
