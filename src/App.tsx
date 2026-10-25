@@ -7,24 +7,23 @@ import {
 
 const projects = [
   {
-    number: '01', title: 'ProjectGenius', type: 'AI PRODUCT DESIGN',
+    number: '01', title: 'MotorOS', type: 'DISTRIBUTED SYSTEMS · FLAGSHIP BUILD',
+    description: 'An automotive workshop platform with eight Spring Boot microservices, multi-tenant access control, and reliable event-driven workflows spanning bookings, inventory, and billing.',
+    tags: ['Java', 'Spring Boot', 'Next.js', 'PostgreSQL', 'Docker'],
+    github: 'https://github.com/Sidtheogdeveloper/motoros', color: 'gold'
+  },
+  {
+    number: '02', title: 'RoamIQ', type: 'AI TRAVEL PLANNING · HACKATHON WINNER',
+    description: 'An AI travel planner with weather-aware itineraries, crowd analytics, Mapbox route optimization, accessibility scoring, and location-based emergency assistance.',
+    tags: ['React', 'TypeScript', 'FastAPI', 'Gemini AI', 'Mapbox'],
+    github: 'https://github.com/Sidtheogdeveloper/RoamIQ', color: 'cyan'
+  },
+  {
+    number: '03', title: 'ProjectGenius', type: 'AI PRODUCT DESIGN',
     description: 'An AI-powered workspace that turns rough ideas into validated plans, practical roadmaps, and build-ready technical direction.',
     tags: ['React', 'TypeScript', 'Supabase', 'AI/ML'],
     github: 'https://github.com/Sidtheogdeveloper/project-genius',
     live: 'https://projectgeniuspro.netlify.app', color: 'violet'
-  },
-  {
-    number: '02', title: 'StockTrader Pro', type: 'DATA + INTELLIGENCE',
-    description: 'A research-oriented investment companion that surfaces market patterns and turns historical data into clear, responsible insights.',
-    tags: ['Machine Learning', 'Financial APIs', 'Analytics'],
-    github: 'https://github.com/Sidtheogdeveloper/StockTradersPro',
-    live: 'https://stocktraderspro.netlify.app', color: 'gold'
-  },
-  {
-    number: '03', title: 'RoamIQ', type: 'HACKATHON WINNER',
-    description: 'A winning travel intelligence concept developed for NXTGEN Hackathon, blending thoughtful product experience with technical execution.',
-    tags: ['Product Strategy', 'Web Development', 'Innovation'],
-    github: 'https://github.com/Sidtheogdeveloper/RoamIQ', color: 'cyan'
   }
 ];
 
@@ -87,7 +86,7 @@ function App() {
             <div><p className="mini-label">CURRENT ROLE</p><h2>CS Engineer<br />in progress</h2><p className="location"><MapPin size={14} /> Chennai, India</p></div>
           </div>
           <div className="stat-row">
-            <div><strong>05+</strong><span>SHIPPED<br />PROJECTS</span></div>
+            <div><strong>09</strong><span>PORTFOLIO<br />PROJECTS</span></div>
             <div><strong>02</strong><span>LIVE<br />PRODUCTS</span></div>
             <div><strong>01</strong><span>HACKATHON<br />WIN</span></div>
           </div>
